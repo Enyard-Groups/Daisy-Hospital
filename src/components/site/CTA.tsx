@@ -1,4 +1,5 @@
-import { Phone } from "lucide-react";
+import { CalendarCheck, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function CTA() {
   return (
@@ -14,12 +15,12 @@ export function CTA() {
           Care refined, results assured, and comfort that stays with you long after recovery.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="#" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-elegant hover:opacity-90 transition">
-            Contact Me
-          </a>
-          <a href="tel:+910000000000" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition">
-            <Phone className="h-4 w-4" /> Call Now
-          </a>
+          <Link to="/appointment" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-7 py-3.5 text-sm font-semibold text-navy-deep shadow-elegant hover:opacity-90 transition">
+            <CalendarCheck className="h-4 w-4" /> Book Your Appointment
+          </Link>
+          <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition">
+            <Phone className="h-4 w-4" /> Contact Us
+          </Link>
         </div>
       </div>
     </section>
