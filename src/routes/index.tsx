@@ -1,26 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Services } from "@/components/site/Services";
+import { About } from "@/components/site/About";
+import { Stats } from "@/components/site/Stats";
+import { Different } from "@/components/site/Different";
+import { Branches } from "@/components/site/Branches";
+import { Testimonials } from "@/components/site/Testimonials";
+import { CTA } from "@/components/site/CTA";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Daisy Hospital — Caring Hands with Ancient Roots | Ayush Integrated" },
+      { name: "description", content: "Daisy Hospital — Ayush Integrated Hospital since 1896. Holistic, natural treatments for diabetes, ortho, neurology, skin & women's wellness." },
+      { property: "og:title", content: "Daisy Hospital — Ayush Integrated Care Since 1896" },
+      { property: "og:description", content: "Your path to recovery starts here. Natural, holistic care rooted in ancient tradition." },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Stats />
+        <Different />
+        <Branches />
+        <Testimonials />
+        <CTA />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
