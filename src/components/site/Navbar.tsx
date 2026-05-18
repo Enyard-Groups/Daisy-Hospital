@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, X, Phone } from "lucide-react";
+import { ChevronDown, Menu, X, CalendarCheck } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const nav = [
@@ -18,7 +18,7 @@ const nav = [
     ],
   },
   { label: "Outreach", to: "/" },
-  { label: "Contact", to: "/" },
+  { label: "Contact", to: "/contact" },
 ];
 
 export function Navbar() {
@@ -60,9 +60,9 @@ export function Navbar() {
             ))}
           </nav>
 
-          <a href="tel:+910000000000" className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-soft hover:opacity-90 transition">
-            <Phone className="h-4 w-4" /> Call Now
-          </a>
+          <Link to="/appointment" className="hidden md:inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-navy-deep shadow-soft hover:opacity-90 transition">
+            <CalendarCheck className="h-4 w-4" /> Book Your Appointment
+          </Link>
 
           <button onClick={() => setOpen(!open)} className="lg:hidden p-2 text-navy" aria-label="Menu">
             {open ? <X /> : <Menu />}
