@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "postbuild": "node scripts/generate-index.js",
-    "vercel-build": "vite build && node scripts/generate-index.js",
+    "postbuild": "node scripts/generate-index.js && node scripts/patch-hydration.js",
+    "vercel-build": "vite build && node scripts/generate-index.js && node scripts/patch-hydration.js",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
